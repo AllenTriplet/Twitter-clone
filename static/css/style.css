@@ -1,0 +1,139 @@
+html,body{
+  height: 100%
+}
+.content{
+  max-width: 600px;
+  height:100%;
+  margin: 0 auto;
+}
+.input-area{
+  position: relative;
+  left: 40px;
+}
+.header_main img{
+  width: 60px;
+}
+.header_main{
+  display: flex;
+  gap: 2%;
+  padding: 10px;
+}
+.post_form {
+    padding: 30px 40px;
+    border: 1px solid #ccc;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+}
+.post_form input{
+  width: 70%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.post_form .logo{
+  text-align: right;
+}
+.post_form textarea{
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.posts li{
+display: flex;
+border-bottom: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
+position: relative;
+list-style: none;
+padding: 1vw 0;
+}
+.posts ul{
+padding: 0;
+}
+.posts li .logo{
+  flex-basis: 15%;
+}
+.logo img{
+  width: 100px;
+  /* padding: 0px; */
+}
+.posts li .name_body{
+  flex-basis: 85%;
+}
+.posts li .name_body .name{
+  font-size: 40px;
+  font-weight: bold;
+}
+.posts li .name_body .datetime{
+  color: gray
+}
+@media screen and (max-width: 500px) {
+  .posts li .name_body .name{
+    font-size: 20px;
+  }  
+}
+.posts li .logo{
+  width: 100%;
+  height: 50%;
+  flex-basis: 15%;
+}
+
+
+.header_main{
+  display: flex;
+  justify-content: center;
+}
+.header_main .img{
+  width: 3vw;
+}
+.posts li .menu{
+  flex-basis: 15%;
+  display: none;
+  position: absolute;
+  top: 42%;
+  right: 4%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.posts li .menu a{
+  text-decoration: none;
+}
+.posts li .menu_icon{
+ 
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 550px;
+  top: 20px;
+}
+
+img.post-border {
+  width: 60%;
+}
+.posts .like{
+  width: 5%;
+  top: 20%;
+  left: -10%;
+}
+img#likebutton {
+  width: 6%;
+}
+.header{
+  display: flex;
+  gap: 2%;
+  padding: 10px;
+}
+.header_main img{
+  width: 60px;
+}
+.header_main{
+  display: flex;
+  gap: 2%;
+  padding: 10px;
+}
+#title img{
+  width: 8%;
+}

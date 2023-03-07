@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section id='title'>
+    <a href=“/”>
+        <img class=“whit” src="/static/img/techis-logo.png" alt=“twitter logo”>
+    </a>
+    <h1>Edit</h1>
+</section>
+
+<section class=“content”>
+    <section class ="post_form">
+        <div class ="logo" id = "user-img">
+            <img src = "{% static 'img/user1.png' %}" alt="user"/>
+        </div>
+        <form action="/edit/{{post.id}}/" method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="name-input" type="text" name="name" placeholder=“Name” value="{{post.name}}" required />
+            <textarea name="body" placeholder="Whats Happening?" required>{{post.body}}</textarea>
+    </div>
+            <label for={{posts.name}}></label>
+        
+        {% if post.image.url %}
+        <img class="post-border" src= "{{ post.image.url }}"/>
+        {% endif %}
+        <div class = "tweet">
+            <input class="flow-control" name= 'image' type="file">
+        </div>
+        <a href=“/”>
+            <button>Cancel</button>
+            <!-- <input class=“cancel-button” type='button' id='delete' value=“Cancel”> -->
+        </a>
+        <button>Tweet</button>
+    </div>
+    </form>
+    </section>
+    {% endblock %}
+</section>

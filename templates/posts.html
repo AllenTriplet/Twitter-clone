@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+  <div class="header">
+    <img src = "{% static 'img/techis-logo.png' %}" style="width:60px"/>
+    <h3>Home</h3>
+  </div>
+    <section class="post_form">
+        <form action="/" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="input-area">
+          <input type="text" name="name" placeholder="Name" required />
+          <textarea name="body" placeholder="Tell us anything" required></textarea>
+          <div class="imageupload">
+            <input class="flow-control" name= 'image'type="file">
+          </div>
+          <input type="submit" value="POST" />
+          </div>
+          </form>
+    </section>
+    <section class="posts">
+      <ul>
+        {% for post in posts %} 
+        <li>
+          <img src="../static/img/menu.png" alt="" class="js-menu-icon menu_icon" />
+          <div class="menu">
+            <a href="/delete/{{ post.id }}/">Delete</a><br>
+            <a href="/edit/{{post.id}}">edit</a>
+          </div>
+          <div class="logo">
+            <img src="../static/img/user1.png" alt="" class="user" />
+          </div>
+          <div class="name_body">
+            <div class="name">{{ post.name }}</div>
+            <div class="datetime">{{ post.created_at }}</div>
+            <p>{{ post.body }}</p>
+            {% if post.image %}
+            <img  class='post-border'src="{{post.image.url}}" alt="">
+            {% endif %}
+            <div id="like-img">
+              <a href="/like/{{post.id}}"><img src="../static/img/heart.png" alt="" id="likebutton"></a>
+              {{post.likecount}}
+            </div>
+            
+          </div>
+        </li>
+          {% endfor %}
+        </ul>
+     </section>   
+     
+</section>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="{% static 'Js/posts.js' %}"></script>
+{% endblock %}
+
+
